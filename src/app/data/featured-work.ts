@@ -47,6 +47,6 @@ export const featuredWorkData: FeaturedProject[] = [
     roles: ["Java", "Spring Boot", "RabbitMQ", "Django REST Framework", "Oracle DB"],
     image: "/images/feature-work/LECO SMS with RabbitMQ Integration.png",
     imageFit: "cover",
-    href: "https://github.com/MenushaKatipearachchi/leco_sms_rabbitmq",
+    href: "https://github.com/MenushaKatipearachchi",
   },
 ];
