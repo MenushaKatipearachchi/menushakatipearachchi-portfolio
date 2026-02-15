@@ -1,0 +1,58 @@
+import Image from "next/image";
+import { experienceData } from "@/app/data/page-data";
+
+const Experience = () => {
+  return (
+    <section>
+      <div className="container">
+        <div className="border-x border-primary/10">
+          <div className="flex flex-col max-w-3xl mx-auto py-10 px-4 sm:px-7">
+            <div className="flex flex-col xs:flex-row gap-5 items-center justify-between">
+              <p className="text-sm tracking-[2px] text-primary uppercase font-medium">Experience</p>
+            </div>
+          </div>
+          <div className="border-t border-primary/10">
+            <div className="flex flex-col max-w-3xl mx-auto px-4 sm:px-7 py-9 md:py-16">
+              {experienceData.map((value, index) => {
+                const isPresent = value.endLabel === "Present";
+
+                return (
+                  <div
+                    key={`${value.company}-${index}`}
+                    className="flex flex-col gap-5 border-dashed border-b border-primary/10 last:border-b-0 pt-8 sm:pt-10 pb-8 sm:pb-10 first:pt-0 last:pb-0"
+                  >
+                    <Image src={value.icon} alt="company-icon" width={28} height={28} />
+                    <div className="flex flex-wrap gap-5 items-center justify-between">
+                      <div className="flex flex-col gap-1">
+                        <h5>{value.role}</h5>
+                        <p>{value.company}</p>
+                      </div>
+                      <div className="flex items-center gap-2.5 border border-primary/10 rounded-lg py-1.5 px-3">
+                        <div className={`w-4 h-2 rounded-sm ${isPresent ? "bg-primary" : "bg-primary/20"}`} />
+                        <p className="text-sm xs:text-base text-primary">
+                          {value.startLabel} - {value.endLabel} | {value.location}
+                        </p>
+                      </div>
+                    </div>
+                    <ul className="space-y-1.5">
+                      {value.bulletPoints.map((point, pointIndex) => {
+                        return (
+                          <li key={`${value.company}-${pointIndex}`} className="flex items-start gap-2 text-base font-normal text-secondary">
+                            <span className="w-2.5 h-2.5 text-secondary">-</span>
+                            {point}
+                          </li>
+                        );
+                      })}
+                    </ul>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Experience;
