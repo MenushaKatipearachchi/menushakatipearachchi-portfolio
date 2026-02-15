@@ -45,6 +45,14 @@ const Experience = () => {
                         );
                       })}
                     </ul>
+                    <div className="flex flex-wrap items-center gap-2">
+                      <p className="text-sm font-medium text-primary">Technologies:</p>
+                      {value.technologies.map((technology) => (
+                        <span key={`${value.company}-${technology}`} className="text-xs px-2 py-1 border border-primary/10 rounded-md text-primary">
+                          {technology}
+                        </span>
+                      ))}
+                    </div>
                   </div>
                 );
               })}

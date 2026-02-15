@@ -6,6 +6,7 @@ export type ExperienceItem = {
   startLabel: string;
   endLabel: string;
   bulletPoints: string[];
+  technologies: string[];
 };
 
 export type EducationItem = {
@@ -47,6 +48,7 @@ export const experienceData: ExperienceItem[] = [
       "Extended the Deposit Module and helped launch Mudarabah as an additional product.",
       "Partnered with a 6-member team to deliver backend logic, UI/UX components, Dotnet services, and T-SQL stored procedures.",
     ],
+    technologies: ["Dotnet", "C#", "Angular", "TypeScript", "T-SQL", "Azure DevOps"],
   },
   {
     icon: "/images/icon/tailwind-icon.svg",
@@ -61,6 +63,7 @@ export const experienceData: ExperienceItem[] = [
       "Tuned PL/SQL queries and resolved Java and Spring Boot defects to improve service reliability.",
       "Coordinated API deployments through WSO2 Identity Server.",
     ],
+    technologies: ["Java", "Spring Boot", "RabbitMQ", "WSO2", "PL/SQL", "GitHub", "GitLab"],
   },
 ];
 
